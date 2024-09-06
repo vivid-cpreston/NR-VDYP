@@ -7,6 +7,7 @@ on:
       - 'frontend/**'
       - 'backend/**'
       - 'migrations/**'
+      - 'vdyp-web-ui/**'
 concurrency:
   # Cancel if re-attempted
   group: ${{ github.event_name }}
@@ -19,7 +20,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        package: [backend, frontend, migrations]
+        package: [backend, frontend, migrations, vdyp-web-ui]
     timeout-minutes: 10
     steps:
       - uses: bcgov-nr/action-builder-ghcr@v2.2.0
