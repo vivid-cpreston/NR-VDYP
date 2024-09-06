@@ -2,6 +2,7 @@
 # Node Bullseye has npm
 FROM node:20.17.0-bullseye-slim AS build
 
+
 # Install packages, build and keep only prod packages
 WORKDIR /app
 COPY *.json *.ts index.html ./
