@@ -7,6 +7,7 @@ on:
       - 'frontend/**'
       - 'backend/**'
       - 'migrations/**'
+      
 concurrency:
   # Cancel if re-attempted
   group: ${{ github.event_name }}
