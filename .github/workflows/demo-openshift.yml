@@ -7,7 +7,6 @@ on:
       - 'frontend/**'
       - 'backend/**'
       - 'migrations/**'
-      
 concurrency:
   # Cancel if re-attempted
   group: ${{ github.event_name }}
@@ -41,9 +40,8 @@ jobs:
       oc_token: ${{ secrets.OC_TOKEN }}
     with:
       triggers: ('backend/' 'frontend/' 'migrations/')
-      params:
-        --set global.secrets.persist=false
-        
+      params: --set global.secrets.persist=false
+
   # tests:
   #   name: Tests
   #   if: needs.deploys.outputs.triggered == 'true'
